@@ -1,6 +1,26 @@
 'use script';
 
 let licenses = {
+  free: {
+    title: 'Старт',
+    price: 0
+  },
+  '0-200': {
+    title: '200',
+    price: 300
+  },
+  '200-1000': {
+    title: '1000',
+    price: 300
+  },
+  '1000-5000': {
+    title: '5000',
+    price: 300
+  },
+  '5000-10000': {
+    title: '10000',
+    price: 300
+  },
   postgresql: {
     title: 'Корпорация PostgreSQL',
     price: 300
@@ -41,6 +61,10 @@ let licenses = {
     title: 'Учет рабочего времени',
     price: 300
   },
+  '1C': {
+    title: 'Интеграция с 1С. Предприятие',
+    price: 300
+  },
   pass: {
     title: 'Оформление пропусков',
     price: 300
@@ -59,11 +83,25 @@ let licenses = {
   }
 };
 
+let clientLicenses = new Set();
+
+function select () {
+  let usersNumber = document.querySelectorAll('option');
+  usersNumber.forEach(function (number) {
+    if (number.selected && number.textContent !== '') {
+      clientLicenses.add(number.dataset.licenseName);
+      return clientLicenses;
+    }
+  });
+}
+
 function check () {
-  let clientLicenses = new Set();
   let checkboxes = document.querySelectorAll('.check');
   checkboxes.forEach(function (checkbox) {
     if (checkbox.checked) {
+      if (checkbox.dataset.licenseName === '1C') {
+        clientLicenses.add('worktime');
+      }
       clientLicenses.add(checkbox.dataset.licenseName);
     }
   });
@@ -72,21 +110,20 @@ function check () {
 
 function createPopup (set) {
   let popupTemplate = document.querySelector('#popup').content.querySelector('.report'); // шаблон, содержимое которого мы будем копировать
-  var fragment = document.createDocumentFragment();
+  let fragment = document.createDocumentFragment();
   let popupElement = popupTemplate.cloneNode(true);
 
-  let clientName = popupElement.querySelector('.popup__client-name');
   let licensesList = popupElement.querySelector('.popup__licenses-list');
   let total = popupElement.querySelector('.popup__total');
   let sum = 0;
-  clientName.textContent = document.querySelector('#client-name').value;
+
   licensesList.innerHTML = '';
 
   Array.from(set.values()).forEach(function (license) {
     let feature = document.createElement('li');
     feature.classList.add('popup__licenses-item');
 
-    feature.textContent = `РЕВЕРС 8000 ${licenses[license].title} - ${licenses[license].price} руб.`;
+    feature.textContent = `РЕВЕРС 8000. ${licenses[license].title} - ${licenses[license].price} руб.`;
     fragment.appendChild(feature);
     sum += licenses[license].price;
   });
@@ -96,11 +133,20 @@ function createPopup (set) {
   total.textContent = `Количество лицензий: ${set.size}. Сумма: ${sum} руб.`;
 
   document.querySelector('main').appendChild(popupElement);
-  console.log(check());
 }
 
-function show () {
-  createPopup(check());
+function resetPopup () {
+  let report = document.querySelector('.report');
+  if (report) report.remove();
+  clientLicenses.clear();
 }
 
-document.querySelector('.show').addEventListener('click', show);
+function showPopup () {
+  resetPopup();
+  select();
+  check();
+  createPopup(clientLicenses);
+  this.scrollIntoView();
+}
+
+document.querySelector('.show').addEventListener('click', showPopup);

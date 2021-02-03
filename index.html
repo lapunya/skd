@@ -5,76 +5,119 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Лицензии</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <main>
-    <form action="" method="POST">
-      <label for="client-name">Имя</label>
-      <input class="client-name" type="text" name="Имя клиента" id="client-name">
-      <!-- <label for="pass-quantity">Введите количество необходимых пропусков</label>
-      <input class="pass-quantity" type="text" name="Количество пропусков" id="pass-quantity"> -->
-      <p>Выберите необходимый функционал</p>
-      <input class="check" type="checkbox" name="" id="postgresql" data-license-name="postgresql">
-      <label for="postgresql">БД системы под управлением СУБД PostgreSQL</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="robot">
-      <label for="">Выполнение действий в системе по расписанию</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="robot">
-      <label for="">Выполнение действий в качестве реакции на события в системе</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="robot">
-      <label for="">Использование сценариев (скриптов)</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="orion">
-      <label for="">Интеграция с ИСО "Орион" (НПК "Болид")</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="biometr">
-      <label for="">Использование биометрических данных для прохода</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="beward">
-      <label for="">Распознавание лиц</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="beward">
-      <label for="">Дистанционное измерение температуры</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="beward">
-      <label for="">Контроль наличия гигиенической маски</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="carnumber">
-      <label for="">Пропуск автотранспорта по государственному регистрационному номеру ТС</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="corp">
-      <label for="">Пропуск автотранспорта через зону досмотра (АвтоКПП)</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="video">
-      <label for="">Просмотр видео со схемы объекта</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="video">
-      <label for="">Видеоидентификация пользователя</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="video">
-      <label for="">Тревожный квадратор</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="video">
-      <label for="">Архив от камер наблюдения в программе "Отчеты"</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="territory">
-      <label for="">Управление объектами системы со схемы территории</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="territory">
-      <label for="">Контроль состояния системы по пиктограммам на схеме территории</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="worktime">
-      <label for="">Графики работы сотрудников</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="worktime">
-      <label for="">Отчет об отработанном сотрудниками времени</label>
-
-      <input class="check" type="checkbox" name="" id="" data-license-name="pass">
-      <label for="">Создание дизайна пропусков</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="pass">
-      <label for="">Генерация штрих-кодов на пропуска</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="pass">
-      <label for="">Печать пропусков</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="scan">
-      <label for="">Сканирование документов с автоматическим занесение данных пользователей</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="control">
-      <label for="">Контроль действий операторов ПО</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="active">
-      <label for="">Синхронизация списка сотрудников в БД СКУД с Active Directory</label>
-      <input class="check" type="checkbox" name="" id="" data-license-name="active">
-      <label for="">Автоматичская блокировка учетных записей в Active Directory при отсутствии сотрудников на рабочем месте</label>
+    <div class="flags">
+      <h2>Выберите необходимый функционал:</h2>
+      <label for="">Выберите количество пользователей (количество карт доступа):
+        <select class="users-number" name="" id="">
+          <option></option>
+          <option value="" data-license-name="0-200">Менее 200</option>
+          <option value="" data-license-name="200-1000">200-1000</option>
+          <option value="" data-license-name="1000-5000">1000-5000</option>
+          <option value="" data-license-name="5000-10000">5000-10000</option>
+          <option value="" data-license-name="corp">Более 10000</option>
+        </select>
+      </label>
+      <label for="postgresql">
+        <input class="check" type="checkbox" name="" id="postgresql" data-license-name="postgresql">БД системы под управлением СУБД PostgreSQL
+      </label>
+      <label for="timetable-action">
+        <input class="check" type="checkbox" name="" id="timetable-action" data-license-name="robot">Выполнение действий в системе по расписанию
+      </label>
+      <label for="event-action">
+        <input class="check" type="checkbox" name="" id="event-action" data-license-name="robot">Выполнение действий в качестве реакции на события в системе
+      </label>  
+      <label for="script-use">
+        <input class="check" type="checkbox" name="" id="script-use" data-license-name="robot">Использование сценариев (скриптов)
+      </label>
+      <label for="orion">
+        <input class="check" type="checkbox" name="" id="orion" data-license-name="orion">Интеграция с ИСО "Орион" (НПК "Болид")
+      </label>
+      <label for="biometr">
+        <input class="check" type="checkbox" name="" id="biometr" data-license-name="biometr">Использование биометрических данных для прохода
+      </label>
+      <label for="faceid">
+        <input class="check" type="checkbox" name="" id="faceid" data-license-name="beward">Распознавание лиц
+      </label>
+      <label for="temperature-check">
+        <input class="check" type="checkbox" name="" id="temperature-check" data-license-name="beward">Дистанционное измерение температуры
+      </label>
+      <label for="mask-check">
+        <input class="check" type="checkbox" name="" id="mask-check" data-license-name="beward">Контроль наличия гигиенической маски
+      </label>
+      <label for="carnumber-check">
+        <input class="check" type="checkbox" name="" id="carnumber-check" data-license-name="carnumber">Пропуск автотранспорта по государственному регистрационному номеру ТС
+      </label>
+      <label for="auto-checkpoint">
+        <input class="check" type="checkbox" name="" id="auto-checkpoint" data-license-name="corp">Пропуск автотранспорта через зону досмотра (АвтоКПП)
+      </label>
+      <label for="view-video">
+        <input class="check" type="checkbox" name="" id="view-video" data-license-name="video">Просмотр видео со схемы объекта
+      </label>
+      <label for="video-id">
+        <input class="check" type="checkbox" name="" id="video-id" data-license-name="video">Видеоидентификация пользователя
+      </label>
+      <label for="alarm">
+        <input class="check" type="checkbox" name="" id="alarm" data-license-name="video">Тревожный квадратор
+      </label>
+      <label for="video-archive">
+        <input class="check" type="checkbox" name="" id="video-archive" data-license-name="video">Архив от камер наблюдения в программе "Отчеты"
+      </label>
+      <label for="system-management">
+        <input class="check" type="checkbox" name="" id="system-management" data-license-name="territory">Управление объектами системы со схемы территории
+      </label>
+      <label for="system-control">
+        <input class="check" type="checkbox" name="" id="system-control" data-license-name="territory">Контроль состояния системы по пиктограммам на схеме территории
+      </label>
+      <label for="worktime-graph">
+        <input class="check" type="checkbox" name="" id="worktime-graph" data-license-name="worktime">Графики работы сотрудников
+      </label>
+      <label for="worktime-report">
+        <input class="check" type="checkbox" name="" id="worktime-report" data-license-name="worktime">Отчет об отработанном сотрудниками времени
+      </label>
+      <label for="1C-integration">
+        <input class="check" type="checkbox" name="" id="1C-integration" data-license-name="1C">Интеграция с 1С. Предприятие
+      </label>
+      <label for="structure-import">
+        <input class="check" type="checkbox" name="" id="structure-import" data-license-name="1C">Импорт должностной структуры предприятия из 1С. Предприятие
+      </label>
+      <label for="workers-import">
+        <input class="check" type="checkbox" name="" id="workers-import" data-license-name="1C">Импорт списка сотрудников из 1С. Предприятие
+      </label>
+      <label for="1C-export">
+        <input class="check" type="checkbox" name="" id="1C-export" data-license-name="1C">Экспорт в 1С. Предприятие данных для составления табелей
+      </label>
+      <label for="pass-design">
+        <input class="check" type="checkbox" name="" id="pass-design" data-license-name="pass">Создание дизайна пропусков
+      </label>
+      <label for="pass-barcode">
+        <input class="check" type="checkbox" name="" id="pass-barcode" data-license-name="pass">Генерация штрих-кодов на пропуска
+      </label>
+      <label for="pass-print">
+        <input class="check" type="checkbox" name="" id="pass-print" data-license-name="pass">Печать пропусков
+      </label>
+      <label for="document-scan">
+        <input class="check" type="checkbox" name="" id="document-scan" data-license-name="scan">Сканирование документов с автоматическим занесение данных пользователей
+      </label>
+      <label for="operator-control">
+        <input class="check" type="checkbox" name="" id="operator-control" data-license-name="control">Контроль действий операторов ПО
+      </label>
+      <label for="db-sync">
+        <input class="check" type="checkbox" name="" id="db-sync" data-license-name="active">Синхронизация списка сотрудников в БД СКУД с Active Directory
+      </label>
+      <label for="account-block">
+        <input class="check" type="checkbox" name="" id="account-block" data-license-name="active">Автоматичская блокировка учетных записей в Active Directory при отсутствии сотрудников на рабочем месте
+      </label>
       <button class="show" type="button">Показать лицензии</button>
-    </form>
+    </div>
   </main>
   <template id="popup">
     <div class="report">
-      <h2>Здравствуйте, <span class="popup__client-name">Александр</span>, по вашим требованиям необходимы следующие
-        лицензии:</h2>
+      <h2>По вашим требованиям необходимы следующие лицензии:</h2>
       <ul class="popup__licenses-list">
         <li class="popup__licenses-item">
           РЕВЕРС 8000 - 300 руб.
