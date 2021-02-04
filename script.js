@@ -1,73 +1,97 @@
 'use script';
 
 let licenses = {
-  free: {
-    title: 'Старт'
+  start: {
+    title: 'РЕВЕРС СТАРТ 8000'
   },
   '0-200': {
-    title: '200'
+    title: 'РЕВЕРС 8000.200'
   },
   '200-1000': {
-    title: '1000'
+    title: 'РЕВЕРС 8000.1000'
   },
   '1000-5000': {
-    title: '5000'
+    title: 'РЕВЕРС 8000.5000'
   },
   '5000-10000': {
-    title: '10000'
+    title: 'РЕВЕРС 8000.10000'
   },
   postgresql: {
-    title: 'Корпорация PostgreSQL'
+    title: 'РЕВЕРС 8000. Корпорация PostgreSQL'
   },
   robot: {
-    title: 'Системный робот'
+    title: 'РЕВЕРС 8000. Системный робот'
   },
   orion: {
-    title: 'Интеграция с системой охранно-пожарной сигнализации Орион'
+    title: 'РЕВЕРС 8000. Интеграция с системой охранно-пожарной сигнализации Орион'
   },
   biometr: {
-    title: 'Интеграция с системами биометрии'
+    title: 'РЕВЕРС 8000. Интеграция с системами биометрии'
   },
   beward: {
-    title: 'Интеграция с терминалами BEWARD TFR'
+    title: 'РЕВЕРС 8000. Интеграция с терминалами BEWARD TFR'
   },
   carnumber: {
-    title: 'Интеграция с системами распознавания автомобильных номеров'
+    title: 'РЕВЕРС 8000. Интеграция с системами распознавания автомобильных номеров'
   },
   corp: {
-    title: 'Корпорация'
+    title: 'РЕВЕРС 8000. Корпорация'
   },
   video: {
-    title: 'Видео'
+    title: 'РЕВЕРС 8000. Видео'
   },
   territory: {
-    title: 'Схемы территории'
+    title: 'РЕВЕРС 8000. Схемы территории'
   },
   worktime: {
-    title: 'Учет рабочего времени'
+    title: 'РЕВЕРС 8000. Учет рабочего времени'
   },
   '1C': {
-    title: 'Интеграция с 1С. Предприятие'
+    title: 'РЕВЕРС 8000. Интеграция с 1С. Предприятие'
   },
   pass: {
-    title: 'Оформление пропусков'
+    title: 'РЕВЕРС 8000. Оформление пропусков'
   },
   scan: {
-    title: 'Сканирование документов ABBYY PassportReader API'
+    title: 'РЕВЕРС 8000. Сканирование документов ABBYY PassportReader API'
   },
   control: {
-    title: 'Контроль действий оператора'
+    title: 'РЕВЕРС 8000. Контроль действий оператора'
   },
   active: {
-    title: 'Интеграция с Active Directory'
+    title: 'РЕВЕРС 8000. Интеграция с Active Directory'
   }
 };
 
+let checkboxes = document.querySelectorAll('.check');
+let startLic = document.querySelector('#start');
+let showButton = document.querySelector('.show');
+let usersNumberSelect = document.querySelector('.users-number');
+
+let usersNumberOptions = document.querySelectorAll('option');
+
 let clientLicenses = new Set();
 
+function start () {
+  if (startLic.checked) {
+    checkboxes.forEach(function (checkbox) {
+      if (checkbox.dataset.licenseName === 'pass' || checkbox.id === 'video-id' || checkbox.id === 'start') {
+        checkbox.disabled = false;
+      } else {
+        checkbox.disabled = true;
+        usersNumberSelect.disabled = true;
+        checkbox.checked = false;
+        usersNumberOptions[0].selected = true;
+      }
+    });
+  } else {
+    checkboxes.forEach(checkbox => checkbox.disabled = false);
+    usersNumberSelect.disabled = false;
+  }
+}
+
 function select () {
-  let usersNumber = document.querySelectorAll('option');
-  usersNumber.forEach(function (number) {
+  usersNumberOptions.forEach(function (number) {
     if (number.selected && number.textContent !== '') {
       clientLicenses.add(number.dataset.licenseName);
       return clientLicenses;
@@ -76,7 +100,6 @@ function select () {
 }
 
 function check () {
-  let checkboxes = document.querySelectorAll('.check');
   checkboxes.forEach(function (checkbox) {
     if (checkbox.checked) {
       if (checkbox.dataset.licenseName === '1C') {
@@ -93,7 +116,10 @@ function createPopup (set) {
   let fragment = document.createDocumentFragment();
   let popupElement = popupTemplate.cloneNode(true);
 
+  let title = popupElement.querySelector('.report__title');
   let licensesList = popupElement.querySelector('.popup__licenses-list');
+
+  if (set.size === 0) title.textContent = 'Выберите нужный Вам функционал';
 
   licensesList.innerHTML = '';
 
@@ -101,7 +127,7 @@ function createPopup (set) {
     let feature = document.createElement('li');
     feature.classList.add('popup__licenses-item');
 
-    feature.textContent = `РЕВЕРС 8000. ${licenses[license].title}`;
+    feature.textContent = licenses[license].title;
     fragment.appendChild(feature);
   });
 
@@ -124,4 +150,5 @@ function showPopup () {
   this.scrollIntoView();
 }
 
-document.querySelector('.show').addEventListener('click', showPopup);
+startLic.addEventListener('click', start);
+showButton.addEventListener('click', showPopup);

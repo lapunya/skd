@@ -4,13 +4,22 @@
   align-items: flex-start;
 }
 
-label {
+.flags__container {
   margin: 10px 5px;
-  font-size: 20px;
 }
 
-input[type="checkbox"] {
+label {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.check {
   margin-right: 5px;
+  cursor: pointer;
+}
+
+.check[disabled] + label{
+  color: grey;
 }
 
 .show {
