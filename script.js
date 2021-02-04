@@ -2,84 +2,64 @@
 
 let licenses = {
   free: {
-    title: 'Старт',
-    price: 0
+    title: 'Старт'
   },
   '0-200': {
-    title: '200',
-    price: 300
+    title: '200'
   },
   '200-1000': {
-    title: '1000',
-    price: 300
+    title: '1000'
   },
   '1000-5000': {
-    title: '5000',
-    price: 300
+    title: '5000'
   },
   '5000-10000': {
-    title: '10000',
-    price: 300
+    title: '10000'
   },
   postgresql: {
-    title: 'Корпорация PostgreSQL',
-    price: 300
+    title: 'Корпорация PostgreSQL'
   },
   robot: {
-    title: 'Системный робот',
-    price: 300
+    title: 'Системный робот'
   },
   orion: {
-    title: 'Интеграция с системой охранно-пожарной сигнализации Орион',
-    price: 300
+    title: 'Интеграция с системой охранно-пожарной сигнализации Орион'
   },
   biometr: {
-    title: 'Интеграция с системами биометрии',
-    price: 300
+    title: 'Интеграция с системами биометрии'
   },
   beward: {
-    title: 'Интеграция с терминалами BEWARD TFR',
-    price: 300
+    title: 'Интеграция с терминалами BEWARD TFR'
   },
   carnumber: {
-    title: 'Интеграция с системами распознавания автомобильных номеров',
-    price: 300
+    title: 'Интеграция с системами распознавания автомобильных номеров'
   },
   corp: {
-    title: 'Корпорация',
-    price: 300
+    title: 'Корпорация'
   },
   video: {
-    title: 'Видео',
-    price: 300
+    title: 'Видео'
   },
   territory: {
-    title: 'Схемы территории',
-    price: 300
+    title: 'Схемы территории'
   },
   worktime: {
-    title: 'Учет рабочего времени',
-    price: 300
+    title: 'Учет рабочего времени'
   },
   '1C': {
-    title: 'Интеграция с 1С. Предприятие',
-    price: 300
+    title: 'Интеграция с 1С. Предприятие'
   },
   pass: {
-    title: 'Оформление пропусков',
-    price: 300
+    title: 'Оформление пропусков'
   },
   scan: {
-    title: 'Сканирование документов ABBYY PassportReader API',
-    price: 300
+    title: 'Сканирование документов ABBYY PassportReader API'
   },
   control: {
-    title: 'Контроль действий оператора',
-    price: 300
+    title: 'Контроль действий оператора'
   },
   active: {
-    title: 'Интеграция с Active Directory',
-    price: 300
+    title: 'Интеграция с Active Directory'
   }
 };
 
@@ -114,8 +94,6 @@ function createPopup (set) {
   let popupElement = popupTemplate.cloneNode(true);
 
   let licensesList = popupElement.querySelector('.popup__licenses-list');
-  let total = popupElement.querySelector('.popup__total');
-  let sum = 0;
 
   licensesList.innerHTML = '';
 
@@ -123,14 +101,11 @@ function createPopup (set) {
     let feature = document.createElement('li');
     feature.classList.add('popup__licenses-item');
 
-    feature.textContent = `РЕВЕРС 8000. ${licenses[license].title} - ${licenses[license].price} руб.`;
+    feature.textContent = `РЕВЕРС 8000. ${licenses[license].title}`;
     fragment.appendChild(feature);
-    sum += licenses[license].price;
   });
 
   licensesList.appendChild(fragment);
-
-  total.textContent = `Количество лицензий: ${set.size}. Сумма: ${sum} руб.`;
 
   document.querySelector('main').appendChild(popupElement);
 }
