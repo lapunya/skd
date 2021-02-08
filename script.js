@@ -2,7 +2,7 @@
 
 let licenses = {
   start: {
-    title: 'РЕВЕРС СТАРТ 8000'
+    title: 'Бесплатное ПО РЕВЕРС СТАРТ 8000'
   },
   '0-200': {
     title: 'РЕВЕРС 8000.200'
@@ -53,7 +53,7 @@ let licenses = {
     title: 'РЕВЕРС 8000. Оформление пропусков'
   },
   scan: {
-    title: 'РЕВЕРС 8000. Сканирование документов ABBYY PassportReader API'
+    title: 'РЕВЕРС 8000. Сканирование документов + ABBYY PassportReader API'
   },
   control: {
     title: 'РЕВЕРС 8000. Контроль действий оператора'
@@ -65,14 +65,15 @@ let licenses = {
 
 let checkboxes = document.querySelectorAll('.check');
 let startLic = document.querySelector('#start');
+let postgresqlLic = document.querySelector('#postgresql');
+
 let showButton = document.querySelector('.show');
 let usersNumberSelect = document.querySelector('.users-number');
-
 let usersNumberOptions = document.querySelectorAll('option');
 
 let clientLicenses = new Set();
 
-function start () {
+function startCheck () {
   if (startLic.checked) {
     checkboxes.forEach(function (checkbox) {
       if (checkbox.dataset.licenseName === 'pass' || checkbox.id === 'video-id' || checkbox.id === 'start') {
@@ -86,6 +87,15 @@ function start () {
     });
   } else {
     checkboxes.forEach(checkbox => checkbox.disabled = false);
+    usersNumberSelect.disabled = false;
+  }
+}
+
+function postgresqlCheck () {
+  if (postgresqlLic.checked) {
+    usersNumberSelect.disabled = true;
+    usersNumberOptions[0].selected = true;
+  } else {
     usersNumberSelect.disabled = false;
   }
 }
@@ -150,5 +160,6 @@ function showPopup () {
   this.scrollIntoView();
 }
 
-startLic.addEventListener('click', start);
+startLic.addEventListener('click', startCheck);
+postgresqlLic.addEventListener('click', postgresqlCheck);
 showButton.addEventListener('click', showPopup);
