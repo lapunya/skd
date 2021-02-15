@@ -9,16 +9,17 @@
 </head>
 
 <body>
-  <main>
-    <div class="flags">
+  <main class="functionality">
+    <section class="functionality__list">
       <h2>Выберите необходимый функционал:</h2>
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="start" data-license-name="start">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="start" data-license-name="start">
         <label for="start">Достаточно простого однопользовательского ПО начального уровня</label>
       </div>
-      <div class="flags__container">
+
+      <div class="functionality__item">
         <label for="users-number">Выберите количество пользователей (количество карт доступа):</label>
-        <select class="users-number" name="" id="users-number">
+        <select class="functionality__select" name="" id="users-number">
           <option></option>
           <option value="" data-license-name="0-200">Менее 200</option>
           <option value="" data-license-name="200-1000">200-1000</option>
@@ -27,164 +28,203 @@
           <option value="" data-license-name="corp">Более 10000</option>
         </select>
       </div>
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="postgresql" data-license-name="postgresql">
+
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="postgresql" data-license-name="postgresql">
         <label for="postgresql">БД системы под управлением СУБД PostgreSQL</label>
       </div>
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="timetable-action" data-license-name="robot">
+
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="timetable-action" data-license-name="robot">
         <label for="timetable-action">Выполнение действий в системе по расписанию</label>
       </div>
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="event-action" data-license-name="robot">
+
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="event-action" data-license-name="robot">
         <label for="event-action">Выполнение действий в качестве реакции на события в системе</label>
       </div>
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="script-use" data-license-name="robot">
+
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="script-use" data-license-name="robot">
         <label for="script-use">Использование сценариев (скриптов)</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="orion" data-license-name="orion">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="orion" data-license-name="orion">
         <label for="orion">Интеграция с ИСО "Орион" (НПК"Болид")</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="biometr" data-license-name="biometr">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="biometr" data-license-name="biometr">
         <label for="biometr">Использование биометрических данных для прохода</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="faceid" data-license-name="beward">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="faceid" data-license-name="beward">
         <label for="faceid">Распознавание лиц</label>
       </div>
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="temperature-check" data-license-name="beward">
+
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="temperature-check" data-license-name="beward">
         <label for="temperature-check">Дистанционное измерение температуры</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="mask-check" data-license-name="beward">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="mask-check" data-license-name="beward">
         <label for="mask-check">Контроль наличия гигиенической маски</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="carnumber-check" data-license-name="carnumber">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="carnumber-check" data-license-name="carnumber">
         <label for="carnumber-check"> Пропуск автотранспорта по государственному регистрационному номеру ТС</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="auto-checkpoint" data-license-name="corp">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="auto-checkpoint" data-license-name="corp">
         <label for="auto-checkpoint">Пропуск автотранспорта через зону досмотра (АвтоКПП)</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="view-video" data-license-name="video">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="view-video" data-license-name="video">
         <label for="view-video">Просмотр видео со схемы объекта</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="video-id" data-license-name="video">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="video-id" data-license-name="video">
         <label for="video-id">Видеоидентификация пользователя</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="alarm" data-license-name="video">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="alarm" data-license-name="video">
         <label for="alarm">Тревожный квадратор</label>
       </div>
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="video-archive" data-license-name="video">
+
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="video-archive" data-license-name="video">
         <label for="video-archive">Архив от камер наблюдения в программе "Отчеты"</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="system-management" data-license-name="territory">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="system-management" data-license-name="territory">
         <label for="system-management">Управление объектами системы со схемы территории</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="system-control" data-license-name="territory">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="system-control" data-license-name="territory">
         <label for="system-control">Контроль состояния системы по пиктограммам на схеме территории</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="worktime-graph" data-license-name="worktime">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="worktime-graph" data-license-name="worktime">
         <label for="worktime-graph">Графики работы сотрудников</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="worktime-report" data-license-name="worktime">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="worktime-report" data-license-name="worktime">
         <label for="worktime-report">Отчет об отработанном сотрудниками времени</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="1C-integration" data-license-name="1C">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="1C-integration" data-license-name="1C">
         <label for="1C-integration">Интеграция с 1С. Предприятие</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="structure-import" data-license-name="1C">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="structure-import" data-license-name="1C">
         <label for="structure-import">Импорт должностной структуры предприятия из 1С. Предприятие</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="workers-import" data-license-name="1C">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="workers-import" data-license-name="1C">
         <label for="workers-import">Импорт списка сотрудников из 1С. Предприятие</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="1C-export" data-license-name="1C">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="1C-export" data-license-name="1C">
         <label for="1C-export">Экспорт в 1С. Предприятие данных для составления табелей</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="pass-design" data-license-name="pass">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="pass-design" data-license-name="pass">
         <label for="pass-design">Создание дизайна пропусков</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="pass-barcode" data-license-name="pass">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="pass-barcode" data-license-name="pass">
         <label for="pass-barcode">Генерация штрих-кодов на пропуска</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="pass-print" data-license-name="pass">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="pass-print" data-license-name="pass">
         <label for="pass-print">Печать пропусков</label>
       </div>
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="document-scan" data-license-name="scan">
+
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="document-scan" data-license-name="scan">
         <label for="document-scan">Сканирование документов с автоматическим занесение данных пользователей</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="operator-control" data-license-name="control">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="operator-control" data-license-name="control">
         <label for="operator-control">Контроль действий операторов ПО</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="db-sync" data-license-name="active">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="db-sync" data-license-name="active">
         <label for="db-sync">Синхронизация списка сотрудников в БД СКУД с Active Directory</label>
       </div>
 
-      <div class="flags__container">
-        <input class="check" type="checkbox" name="" id="account-block" data-license-name="active">
+      <div class="functionality__item">
+        <input class="functionality__check" type="checkbox" name="" id="account-block" data-license-name="active">
         <label for="account-block">Автоматическая блокировка учетных записей в Active Directory при отсутствии
           сотрудников на рабочем месте</label>
       </div>
 
-      <button class="show" type="button">Показать лицензии</button>
-    </div>
+      <button class="functionality__button" type="button">Показать лицензии</button>
+    </section>
   </main>
   <template id="popup">
     <div class="report">
-      <h2 class="report__title">По вашим требованиям необходимы следующие лицензии:</h2>
+      <p class="report__title">По вашим требованиям необходимы следующие лицензии:</з>
       <ul class="popup__licenses-list">
-        <li class="popup__licenses-item">
-          РЕВЕРС 8000
-        </li>
+        <li class="popup__licenses-item"></li>
       </ul>
     </div>
   </template>
+  <template id="success">
+    <div class="success">
+      <p class="success__message">Ваш запрос успешно отправлен на электронную почту.</p>
+    </div>
+  </template>
+  <template id="error">
+    <div class="error">
+      <p class="error__message">Ошибка загрузки объявления</p>
+      <button class="error__button">Попробовать снова</button>
+    </div>
+  </template>
+  <form class="message-form" method="POST" enctype="multipart/form-data" autocomplete="off">
+    <p class="message-form__title">Для отправки списка необходимых лицензий нам на эл. почту, заполните, пожалуйста, форму:</p>
+    <div class="input__container">
+      <label for="userName">Имя*:</label>
+      <input type="text" name="userName" id="userName" required>
+    </div>
+    <div class="input__container">
+      <label for="userEmail">E-mail*:</label>
+      <input type="email" name="userEmail" id="userEmail" required>
+    </div>
+    <div class="input__container">
+      <label for="telephoneNumber">Телефон*:</label>
+      <input type="tel" name="telephoneNumber" id="telephoneNumber" required>
+    </div>
+    <div class="input__container">
+      <input type="checkbox" name="offer" id="offer">
+      <label for="offer">Прислать в ответном письме (на указанную почту) коммерческое предложение</label>
+    </div>
+    <p class="message-form__footnote">* - поля обязательные для заполнения</p>
+    <textarea class="message-form__text" name="list"></textarea>
+    <button class="message-form__button" type="submit">Отправить</button>
+  </form>
+  <script src="imask.js"></script>
   <script src="script.js"></script>
 </body>
 
