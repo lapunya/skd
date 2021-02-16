@@ -205,16 +205,28 @@
   <form class="message-form" method="POST" enctype="multipart/form-data" autocomplete="off">
     <p class="message-form__title">Для отправки списка необходимых лицензий нам на эл. почту, заполните, пожалуйста, форму:</p>
     <div class="input__container">
+      <label for="userSurname">Фамилия*:</label>
+      <input type="text" name="userSurname" id="userSurname" required>
+    </div>
+    <div class="input__container">
       <label for="userName">Имя*:</label>
       <input type="text" name="userName" id="userName" required>
+    </div>
+    <div class="input__container">
+      <label for="userPatronymic">Отчество*:</label>
+      <input type="text" name="userPatronymic" id="userPatronymic" required>
+    </div>
+    <div class="input__container">
+      <label for="companyName">Название организации*:</label>
+      <input type="text" name="companyName" id="companyName" required>
     </div>
     <div class="input__container">
       <label for="userEmail">E-mail*:</label>
       <input type="email" name="userEmail" id="userEmail" required>
     </div>
     <div class="input__container">
-      <label for="telephoneNumber">Телефон*:</label>
-      <input type="tel" name="telephoneNumber" id="telephoneNumber" required>
+      <label for="telephoneNumber">Телефон:</label>
+      <input type="tel" name="telephoneNumber" id="telephoneNumber">
     </div>
     <div class="input__container">
       <input type="checkbox" name="offer" id="offer">

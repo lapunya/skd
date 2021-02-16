@@ -1,12 +1,19 @@
 <?php
     $userName = $_POST['userName'];
+    $userSurname = $_POST['userSurname'];
+    $userPatronymic = $_POST['userPatronymic'];
+    $companyName = $_POST['companyName'];
     $to = "skd@kronwerk.ru";
     $from = $_POST['userEmail'];
     $subject = "Выбор лицензий";
     $licenses = $_POST['list'];
     $telephoneNumber = $_POST['telephoneNumber'];
     $offer = $_POST['offer'];
-    $message = "Пользователю требуются следующие лицензии:\n$licenses\nКонтактные данные:\nИмя: $userName\nТелефон: $telephoneNumber\nЭл.почта: $from";
+    $contacts = "Контактные данные:\nФамилия: $userSurname\nИмя: $userName\nОтчество: $userPatronymic\nНазвание организации: $companyName\nЭл.почта: $from";
+    if ($telephoneNumber) {
+        $contacts .= "\nНомер телефона: $telephoneNumber";
+    }
+    $message = "Пользователю требуются следующие лицензии:\n$licenses\n$contacts";
     if ($offer == on) {
         $message .= "\n\nПользователь запросил коммерческое предложение";
     }
