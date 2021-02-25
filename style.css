@@ -1,16 +1,35 @@
+.functionality__subtitle {
+  font-size: 27px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.functionality__subtitle--normal {
+  font-size: 20px;
+  font-weight: normal;
+}
+
 .functionality__list {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .functionality__item {
-  margin: 10px 5px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
-label {
+.functionality__label {
   font-size: 20px;
   cursor: pointer;
+  display: inline-block;
+  max-width: 95%;
+}
+
+.functionality__label--select {
+  margin-right: 15px;
 }
 
 .report__title,
@@ -34,12 +53,30 @@ label {
 }
 
 .functionality__check {
-  margin-right: 5px;
+  margin-right: 10px;
   cursor: pointer;
 }
 
-.functionality__check[disabled] + label{
+.functionality__check[disabled] + .functionality__label{
   color: grey;
+}
+
+.functionality__notes-list {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  padding-left: 25px;
+  list-style: none;
+}
+
+.functionality__notes-item {
+  margin-bottom: 7px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.functionality__notes-item:last-child {
+  margin-bottom: 0;
 }
 
 .functionality__button,

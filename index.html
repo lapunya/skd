@@ -11,14 +11,14 @@
 <body>
   <main class="functionality">
     <section class="functionality__list">
-      <h2>Выберите необходимый функционал:</h2>
+      <p class="functionality__subtitle">Для расчета количества и стоимости лицензий программного обеспечения (ПО) СКУД "РЕВЕРС 8000" выберите необходимый функционал:</p>
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="start" data-license-name="start">
-        <label for="start">Достаточно простого однопользовательского ПО начального уровня</label>
+        <label class="functionality__label" for="start">Мне достаточно бесплатного простого однопользовательского ПО начального уровня СТАРТ 8000 (можно добавить только дополнительные лицензии "Видео" для АРМ охраны и "Оформление пропусков")</label>
       </div>
-
+      <p class="functionality__subtitle">Для расчета стоимости лицензий ПО комплексной многофункциональной СКУД "РЕВЕРС 8000":</p>
       <div class="functionality__item">
-        <label for="users-number">Выберите количество пользователей (количество карт доступа):</label>
+        <label class="functionality__label functionality__label--select" for="users-number">1. Выберите количество пользователей (количество карт доступа) - этого достаточно, для запуска СКУД "РЕВЕРС 8000" в эксплуатацию:</label>
         <select class="functionality__select" name="" id="users-number">
           <option></option>
           <option value="" data-license-name="0-200">Менее 200</option>
@@ -28,158 +28,163 @@
           <option value="" data-license-name="corp">Более 10000</option>
         </select>
       </div>
-
+      <p class="functionality__subtitle functionality__subtitle--normal">2. Выберите дополнительный функционал для СКУД "РЕВЕРС 8000":</p>
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="postgresql" data-license-name="postgresql">
-        <label for="postgresql">БД системы под управлением СУБД PostgreSQL</label>
+        <label class="functionality__label" for="postgresql">БД системы под управлением СУБД PostgreSQL</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="timetable-action" data-license-name="robot">
-        <label for="timetable-action">Выполнение действий в системе по расписанию</label>
+        <label class="functionality__label" for="timetable-action">Выполнение действий в системе по расписанию</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="event-action" data-license-name="robot">
-        <label for="event-action">Выполнение действий в качестве реакции на события в системе</label>
+        <label class="functionality__label" for="event-action">Выполнение действий в качестве реакции на события в системе</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="script-use" data-license-name="robot">
-        <label for="script-use">Использование сценариев (скриптов)</label>
+        <label class="functionality__label" for="script-use">Использование сценариев (скриптов)</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="orion" data-license-name="orion">
-        <label for="orion">Интеграция с ИСО "Орион" (НПК"Болид")</label>
+        <label class="functionality__label" for="orion">Интеграция с ИСО "Орион" (НПК"Болид")</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="biometr" data-license-name="biometr">
-        <label for="biometr">Использование биометрических данных для прохода</label>
+        <label class="functionality__label" for="biometr">Использование биометрических данных для прохода*</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="faceid" data-license-name="beward">
-        <label for="faceid">Распознавание лиц</label>
+        <label class="functionality__label" for="faceid">Распознавание лиц**</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="temperature-check" data-license-name="beward">
-        <label for="temperature-check">Дистанционное измерение температуры</label>
+        <label class="functionality__label" for="temperature-check">Дистанционное измерение температуры**</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="mask-check" data-license-name="beward">
-        <label for="mask-check">Контроль наличия гигиенической маски</label>
+        <label class="functionality__label" for="mask-check">Контроль наличия гигиенической маски**</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="carnumber-check" data-license-name="carnumber">
-        <label for="carnumber-check"> Пропуск автотранспорта по государственному регистрационному номеру ТС</label>
+        <label class="functionality__label" for="carnumber-check">Пропуск автотранспорта по государственному регистрационному номеру ТС***</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="auto-checkpoint" data-license-name="corp">
-        <label for="auto-checkpoint">Пропуск автотранспорта через зону досмотра (АвтоКПП)</label>
+        <label class="functionality__label" for="auto-checkpoint">Пропуск автотранспорта через зону досмотра (АвтоКПП)</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="view-video" data-license-name="video">
-        <label for="view-video">Просмотр видео со схемы объекта</label>
+        <label class="functionality__label" for="view-video">Просмотр видео от камер системы видеонаблюдения**** со схемы объекта</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="video-id" data-license-name="video">
-        <label for="video-id">Видеоидентификация пользователя</label>
+        <label class="functionality__label" for="video-id">Фотоверификация пользователя на КПП</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="alarm" data-license-name="video">
-        <label for="alarm">Тревожный квадратор</label>
+        <label class="functionality__label" for="alarm">Тревожный видео-квадратор****</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="video-archive" data-license-name="video">
-        <label for="video-archive">Архив от камер наблюдения в программе "Отчеты"</label>
+        <label class="functionality__label" for="video-archive">Архив от камер системы видеонаблюдения**** в программе "Отчеты"</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="system-management" data-license-name="territory">
-        <label for="system-management">Управление объектами системы со схемы территории</label>
+        <label class="functionality__label" for="system-management">Управление объектами системы со схемы территории</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="system-control" data-license-name="territory">
-        <label for="system-control">Контроль состояния системы по пиктограммам на схеме территории</label>
+        <label class="functionality__label" for="system-control">Контроль состояния системы по пиктограммам на схеме территории</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="worktime-graph" data-license-name="worktime">
-        <label for="worktime-graph">Графики работы сотрудников</label>
+        <label class="functionality__label" for="worktime-graph">Графики работы сотрудников</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="worktime-report" data-license-name="worktime">
-        <label for="worktime-report">Отчет об отработанном сотрудниками времени</label>
+        <label class="functionality__label" for="worktime-report">Отчет об отработанном сотрудниками времени</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="1C-integration" data-license-name="1C">
-        <label for="1C-integration">Интеграция с 1С. Предприятие</label>
+        <label class="functionality__label" for="1C-integration">Интеграция с 1С. Предприятие</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="structure-import" data-license-name="1C">
-        <label for="structure-import">Импорт должностной структуры предприятия из 1С. Предприятие</label>
+        <label class="functionality__label" for="structure-import">Импорт должностной структуры предприятия из 1С. Предприятие</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="workers-import" data-license-name="1C">
-        <label for="workers-import">Импорт списка сотрудников из 1С. Предприятие</label>
+        <label class="functionality__label" for="workers-import">Импорт списка сотрудников из 1С. Предприятие</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="1C-export" data-license-name="1C">
-        <label for="1C-export">Экспорт в 1С. Предприятие данных для составления табелей</label>
+        <label class="functionality__label" for="1C-export">Экспорт в 1С. Предприятие данных для составления табелей</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="pass-design" data-license-name="pass">
-        <label for="pass-design">Создание дизайна пропусков</label>
+        <label class="functionality__label" for="pass-design">Создание дизайна пропусков</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="pass-barcode" data-license-name="pass">
-        <label for="pass-barcode">Генерация штрих-кодов на пропуска</label>
+        <label class="functionality__label" for="pass-barcode">Генерация штрих-кодов на пропуска</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="pass-print" data-license-name="pass">
-        <label for="pass-print">Печать пропусков</label>
+        <label class="functionality__label" for="pass-print">Печать пропусков</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="document-scan" data-license-name="scan">
-        <label for="document-scan">Сканирование документов с автоматическим занесение данных пользователей</label>
+        <label class="functionality__label" for="document-scan">Сканирование документов с автоматическим занесение данных пользователей</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="operator-control" data-license-name="control">
-        <label for="operator-control">Контроль действий операторов ПО</label>
+        <label class="functionality__label" for="operator-control">Контроль действий операторов ПО</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="db-sync" data-license-name="active">
-        <label for="db-sync">Синхронизация списка сотрудников в БД СКУД с Active Directory</label>
+        <label class="functionality__label" for="db-sync">Синхронизация списка сотрудников в БД СКУД с Active Directory</label>
       </div>
 
       <div class="functionality__item">
         <input class="functionality__check" type="checkbox" name="" id="account-block" data-license-name="active">
-        <label for="account-block">Автоматическая блокировка учетных записей в Active Directory при отсутствии
+        <label class="functionality__label" for="account-block">Автоматическая блокировка учетных записей в Active Directory при отсутствии
           сотрудников на рабочем месте</label>
       </div>
-
+      <ul class="functionality__notes-list">
+        <li class="functionality__notes-item">*) Системы биометрии определяются при заказе.</li>
+        <li class="functionality__notes-item">**) Терминалы распознавания лиц, измерения температуры и наличия маски определяются при заказе.</li>
+        <li class="functionality__notes-item">***) Система распознавания автомобильных номеров определяется при заказе.</li>
+        <li class="functionality__notes-item">****) Для систем видеонаблюдения GEUTEBRUCK GeViScope, SecurOs, AxxonNext, Intellect, Trassir, Macroscop, Линия, Revisor VMS, DOMINATION</li>
+      </ul>
       <button class="functionality__button" type="button">Показать лицензии</button>
     </section>
   </main>
