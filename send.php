@@ -3,7 +3,7 @@
     $userSurname = $_POST['userSurname'];
     $userPatronymic = $_POST['userPatronymic'];
     $companyName = $_POST['companyName'];
-    $to = "skd@kronwerk.ru";
+    $to = "skd@kronwerk.ru, metar@kronwerk.ru";
     $from = $_POST['userEmail'];
     $subject = "Выбор лицензий";
     $licenses = $_POST['list'];
